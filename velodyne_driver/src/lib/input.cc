@@ -156,7 +156,8 @@ namespace velodyne_driver
             if (retval == 0)            // poll() timeout?
               {
                 ROS_WARN("Velodyne poll() timeout");
-                return -1;
+                //return -1;
+                sleep(1);
               }
             if ((fds[0].revents & POLLERR)
                 || (fds[0].revents & POLLHUP)
